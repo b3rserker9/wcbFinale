@@ -1,0 +1,89 @@
+WARN   | wrapper  | 2017/11/30 13:49:56 | Unable to write to the configured log directory: ..\..\logs (Impossibile trovare il percorso specificato. (0x3))
+WARN   | wrapper  | 2017/11/30 13:49:56 |   The directory does not exist.
+WARN   | wrapper  | 2017/11/30 13:49:56 | Unable to write to the configured log file: ..\..\logs\log.txt (Impossibile trovare il percorso specificato. (0x3))
+WARN   | wrapper  | 2017/11/30 13:49:56 |   Falling back to the default file in the current working directory: wrapper.log
+STATUS | wrapper  | 2017/11/30 13:49:56 | Starting the Wiki Course Builder service...
+INFO   | wrapper  | 2017/11/30 13:50:01 | Waiting to start...
+STATUS | wrapper  | 2017/11/30 13:50:03 | Wiki Course Builder started.
+WARN   | wrapper  | 2017/11/30 13:56:31 | Unable to write to the configured log directory: ..\..\logs (Impossibile trovare il percorso specificato. (0x3))
+WARN   | wrapper  | 2017/11/30 13:56:31 |   The directory does not exist.
+WARN   | wrapper  | 2017/11/30 13:56:31 | Unable to write to the configured log file: ..\..\logs\log.txt (Impossibile trovare il percorso specificato. (0x3))
+WARN   | wrapper  | 2017/11/30 13:56:31 |   Falling back to the default file in the current working directory: wrapper.log
+STATUS | wrapper  | 2017/11/30 13:56:31 | Stopping the Wiki Course Builder service...
+STATUS | wrapper  | 2017/11/30 13:56:34 | Wiki Course Builder stopped.
+WARN   | wrapper  | 2017/11/30 14:05:52 | Unable to write to the configured log directory: ..\..\logs (Impossibile trovare il percorso specificato. (0x3))
+WARN   | wrapper  | 2017/11/30 14:05:52 |   The directory does not exist.
+WARN   | wrapper  | 2017/11/30 14:05:52 | Unable to write to the configured log file: ..\..\logs\log.txt (Impossibile trovare il percorso specificato. (0x3))
+WARN   | wrapper  | 2017/11/30 14:05:52 |   Falling back to the default file in the current working directory: wrapper.log
+STATUS | wrapper  | 2017/11/30 14:05:52 | The Wiki Course Builder service was not running.
+WARN   | wrapper  | 2017/12/06 15:46:16 | Unable to write to the configured log directory: ..\..\logs (Impossibile trovare il percorso specificato. (0x3))
+WARN   | wrapper  | 2017/12/06 15:46:16 |   The directory does not exist.
+WARN   | wrapper  | 2017/12/06 15:46:16 | Unable to write to the configured log file: ..\..\logs\log.txt (Impossibile trovare il percorso specificato. (0x3))
+WARN   | wrapper  | 2017/12/06 15:46:16 |   Falling back to the default file in the current working directory: wrapper.log
+STATUS | wrapper  | 2017/12/06 15:46:16 | Starting the Wiki Course Builder service...
+INFO   | wrapper  | 2017/12/06 15:46:21 | Waiting to start...
+STATUS | wrapper  | 2017/12/06 15:46:24 | Wiki Course Builder started.
+WARN   | wrapper  | 2017/12/06 15:48:56 | Unable to write to the configured log directory: ..\..\logs (Impossibile trovare il percorso specificato. (0x3))
+WARN   | wrapper  | 2017/12/06 15:48:56 |   The directory does not exist.
+WARN   | wrapper  | 2017/12/06 15:48:56 | Unable to write to the configured log file: ..\..\logs\log.txt (Impossibile trovare il percorso specificato. (0x3))
+WARN   | wrapper  | 2017/12/06 15:48:56 |   Falling back to the default file in the current working directory: wrapper.log
+STATUS | wrapper  | 2017/12/06 15:48:56 | Stopping the Wiki Course Builder service...
+STATUS | wrapper  | 2017/12/06 15:48:59 | Wiki Course Builder stopped.
+FATAL  | wrapper  | 2017/12/06 15:49:06 | Failed to load configuration.
+FATAL  | wrapper  | 2017/12/06 15:49:10 | Failed to load configuration.
+WARN   | wrapper  | 2017/12/06 16:51:19 | Unable to write to the configured log directory: ..\..\logs (Impossibile trovare il percorso specificato. (0x3))
+WARN   | wrapper  | 2017/12/06 16:51:19 |   The directory does not exist.
+WARN   | wrapper  | 2017/12/06 16:51:19 | Unable to write to the configured log file: ..\..\logs\log.txt (Impossibile trovare il percorso specificato. (0x3))
+WARN   | wrapper  | 2017/12/06 16:51:19 |   Falling back to the default file in the current working directory: wrapper.log
+STATUS | wrapper  | 2017/12/06 16:51:19 | Starting the Wiki Course Builder service...
+INFO   | wrapper  | 2017/12/06 16:51:25 | Waiting to start...
+STATUS | wrapper  | 2017/12/06 16:51:27 | Wiki Course Builder started.
+WARN   | wrapper  | 2017/12/06 16:52:37 | Unable to write to the configured log directory: ..\..\logs (Impossibile trovare il percorso specificato. (0x3))
+WARN   | wrapper  | 2017/12/06 16:52:37 |   The directory does not exist.
+WARN   | wrapper  | 2017/12/06 16:52:37 | Unable to write to the configured log file: ..\..\logs\log.txt (Impossibile trovare il percorso specificato. (0x3))
+WARN   | wrapper  | 2017/12/06 16:52:37 |   Falling back to the default file in the current working directory: wrapper.log
+STATUS | wrapper  | 2017/12/06 16:52:37 | Stopping the Wiki Course Builder service...
+STATUS | wrapper  | 2017/12/06 16:52:40 | Wiki Course Builder stopped.
+WARN   | wrapper  | 2017/12/06 16:55:22 | Unable to write to the configured log directory: ..\..\logs (Impossibile trovare il percorso specificato. (0x3))
+WARN   | wrapper  | 2017/12/06 16:55:22 |   The directory does not exist.
+WARN   | wrapper  | 2017/12/06 16:55:22 | Unable to write to the configured log file: ..\..\logs\log.txt (Impossibile trovare il percorso specificato. (0x3))
+WARN   | wrapper  | 2017/12/06 16:55:22 |   Falling back to the default file in the current working directory: wrapper.log
+STATUS | wrapper  | 2017/12/06 16:55:22 | Starting the Wiki Course Builder service...
+STATUS | wrapper  | 2017/12/06 16:55:27 | Wiki Course Builder started.
+WARN   | wrapper  | 2017/12/06 16:55:47 | Unable to write to the configured log directory: ..\..\logs (Impossibile trovare il percorso specificato. (0x3))
+WARN   | wrapper  | 2017/12/06 16:55:47 |   The directory does not exist.
+WARN   | wrapper  | 2017/12/06 16:55:47 | Unable to write to the configured log file: ..\..\logs\log.txt (Impossibile trovare il percorso specificato. (0x3))
+WARN   | wrapper  | 2017/12/06 16:55:47 |   Falling back to the default file in the current working directory: wrapper.log
+STATUS | wrapper  | 2017/12/06 16:55:47 | Stopping the Wiki Course Builder service...
+STATUS | wrapper  | 2017/12/06 16:55:50 | Wiki Course Builder stopped.
+WARN   | wrapper  | 2017/12/06 17:02:04 | Unable to write to the configured log directory: ..\..\logs (Impossibile trovare il percorso specificato. (0x3))
+WARN   | wrapper  | 2017/12/06 17:02:04 |   The directory does not exist.
+WARN   | wrapper  | 2017/12/06 17:02:04 | Unable to write to the configured log file: ..\..\logs\log.txt (Impossibile trovare il percorso specificato. (0x3))
+WARN   | wrapper  | 2017/12/06 17:02:04 |   Falling back to the default file in the current working directory: wrapper.log
+STATUS | wrapper  | 2017/12/06 17:02:04 | Starting the Wiki Course Builder service...
+INFO   | wrapper  | 2017/12/06 17:02:10 | Waiting to start...
+INFO   | wrapper  | 2017/12/06 17:02:15 | Waiting to start...
+INFO   | wrapper  | 2017/12/06 17:02:20 | Waiting to start...
+INFO   | wrapper  | 2017/12/06 17:02:25 | Waiting to start...
+INFO   | wrapper  | 2017/12/06 17:02:30 | Waiting to start...
+INFO   | wrapper  | 2017/12/06 17:02:35 | Waiting to start...
+ERROR  | wrapper  | 2017/12/06 17:02:38 | The Wiki Course Builder service was launched, but failed to start.
+ERROR  | wrapper  | 2017/12/06 17:02:38 | Please check the log file more information: H:\J-HaRd\MySoftWare\NetBeansProjects\Wiki-course-builder\Wiki-course-builder\src\release\bin\win64\wrapper.log
+WARN   | wrapper  | 2017/12/06 17:05:12 | Unable to write to the configured log directory: ..\..\logs (Impossibile trovare il percorso specificato. (0x3))
+WARN   | wrapper  | 2017/12/06 17:05:12 |   The directory does not exist.
+WARN   | wrapper  | 2017/12/06 17:05:12 | Unable to write to the configured log file: ..\..\logs\log.txt (Impossibile trovare il percorso specificato. (0x3))
+WARN   | wrapper  | 2017/12/06 17:05:12 |   Falling back to the default file in the current working directory: wrapper.log
+STATUS | wrapper  | 2017/12/06 17:05:12 | Starting the Wiki Course Builder service...
+STATUS | wrapper  | 2017/12/06 17:05:17 | Wiki Course Builder started.
+WARN   | wrapper  | 2017/12/06 17:33:35 | Unable to write to the configured log directory: ..\..\logs (Impossibile trovare il percorso specificato. (0x3))
+WARN   | wrapper  | 2017/12/06 17:33:35 |   The directory does not exist.
+WARN   | wrapper  | 2017/12/06 17:33:35 | Unable to write to the configured log file: ..\..\logs\log.txt (Impossibile trovare il percorso specificato. (0x3))
+WARN   | wrapper  | 2017/12/06 17:33:35 |   Falling back to the default file in the current working directory: wrapper.log
+STATUS | wrapper  | 2017/12/06 17:33:35 | Stopping the Wiki Course Builder service...
+STATUS | wrapper  | 2017/12/06 17:33:38 | Wiki Course Builder stopped.
+WARN   | wrapper  | 2017/12/06 17:34:43 | Unable to write to the configured log directory: ..\..\logs (Impossibile trovare il percorso specificato. (0x3))
+WARN   | wrapper  | 2017/12/06 17:34:43 |   The directory does not exist.
+WARN   | wrapper  | 2017/12/06 17:34:43 | Unable to write to the configured log file: ..\..\logs\log.txt (Impossibile trovare il percorso specificato. (0x3))
+WARN   | wrapper  | 2017/12/06 17:34:43 |   Falling back to the default file in the current working directory: wrapper.log
+STATUS | wrapper  | 2017/12/06 17:34:43 | Starting the Wiki Course Builder service...
+STATUS | wrapper  | 2017/12/06 17:34:48 | Wiki Course Builder started.

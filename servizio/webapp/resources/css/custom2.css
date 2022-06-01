@@ -1,0 +1,13 @@
+﻿.auto-style1 {
+	margin-top: 12px;
+	margin-left: 40px;
+}
+.ui-dialog {
+    z-index: 9999 !important;
+}
+.ui-dialog .ui-icon-minusthick {
+    position: absolute;
+    right: 1px;
+    width:24px;
+    height:24px;
+}

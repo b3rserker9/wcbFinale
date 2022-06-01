@@ -1,0 +1,1119 @@
+
+
+
+
+
+
+
+
+
+
+{{For|information on Wikipedia's data structure|Wikipedia:Administration#Data structure and development}}
+{{distinguish|data type}}
+{{more citations needed|date=January 2017}}
+[[Image:Hash table 3 1 1 0 1 0 0 SP.svg|thumb|315px|A data structure known as a [[hash table]].]] 
+In [[computer science]], a '''data structure''' is a data organization, management and storage format that enables [[Algorithmic efficiency|efficient]] access and modification.<ref>{{Cite book|url=https://dl.acm.org/citation.cfm?id=1614191|title=Introduction to Algorithms, Third Edition|last=Cormen|first=Thomas H.|last2=Leiserson|first2=Charles E.|last3=Rivest|first3=Ronald L.|last4=Stein|first4=Clifford|date=2009|publisher=The MIT Press|isbn=978-0262033848|edition=3rd}}</ref><ref>{{cite book |last1=Black |first1=Paul E. |editor1-last=Pieterse |editor1-first=Vreda |editor2-last=Black |editor2-first=Paul E. |title=Dictionary of Algorithms and Data Structures [online] |date=15 December 2004 |publisher=[[National Institute of Standards and Technology]] |chapter-url=https://xlinux.nist.gov/dads/HTML/datastructur.html |accessdate=2018-11-06 |chapter=data structure}}</ref><ref>{{cite encyclopedia |encyclopedia=Encyclopaedia Britannica |title= Data structure |url=https://www.britannica.com/technology/data-structure |access-date=2018-11-06 |edition= |date=17 April 2017}}</ref> More precisely, a data structure is a collection of data values, the relationships among them, and the functions or operations that can be applied to the data.<ref>{{Cite book|url=http://dl.acm.org/citation.cfm?id=1074100.1074312|title=Encyclopedia of Computer Science|last=Wegner|first=Peter|last2=Reilly|first2=Edwin D.|publisher=John Wiley and Sons |isbn=978-0470864128|location=Chichester, UK|pages=507–512|date=2003-08-29}}</ref>
+
+==Usage==
+
+Data structures serve as the basis for [[abstract data type]]s (ADT). The ADT defines the logical form of the data type. The data structure implements the physical form of the data type.<ref>{{cite web |title=Abstract Data Types |url=https://opendsa-server.cs.vt.edu/ODSA/Books/CS3/html/ADT.html |website=Virginia Tech - CS3 Data Structures & Algorithms}}</ref>
+
+Different types of data structures are suited to different kinds of applications, and some are highly specialized to specific tasks. For example, relational databases commonly use [[B-tree]] indexes for data retrieval,<ref>{{cite book|chapter-url=http://searchsecurity.techtarget.com/generic/0,295582,sid87_gci1184450,00.html|title=Beginning Database Design|isbn=978-0-7645-7490-0|author=Gavin Powell|chapter=Chapter 8: Building Fast-Performing Database Models|publisher=[[Wrox Press|Wrox Publishing]]|year=2006}}</ref> while [[compiler]] implementations usually use [[hash table]]s to look up identifiers.<ref>{{cite web |title=1.5 Applications of a Hash Table |url=http://www.cs.uregina.ca/Links/class-info/210/Hash/ |website=University of Regina - CS210 Lab: Hash Table}}</ref>
+
+Data structures provide a means to manage large amounts of data efficiently for uses such as large [[database]]s and [[web indexing|internet indexing services]]. Usually, efficient data structures are key to designing efficient [[algorithm]]s. Some formal design methods and [[programming language]]s emphasize data structures, rather than algorithms, as the key organizing factor in software design. Data structures can be used to organize the storage and retrieval of information stored in both [[main memory]] and [[secondary memory]].<ref>{{cite web |title=When data is too big to fit into the main memory |url=http://homes.sice.indiana.edu/yye/lab/teaching/spring2014-C343/datatoobig.php |website=homes.sice.indiana.edu}}</ref>
+
+==Implementation==
+Data structures are generally based on the ability of a computer to fetch and store data at any place in its memory, specified by a [[pointer (computer programming)|pointer]]—a bit string, representing a [[memory address]], that can be itself stored in memory and manipulated  by the program. Thus, the [[Array data structure|array]] and [[record (computer science)|record]] data structures are based on computing the addresses of data items with [[arithmetic operations]], while the [[linked data structure]]s are based on storing addresses of data items within the structure itself. Many data structures use both principles, sometimes combined in non-trivial ways (as in [[XOR linked list|XOR linking]]).{{citation needed|date=January 2017}}
+
+The implementation of a data structure usually requires writing a set of [[subroutine|procedures]] that create and manipulate instances of that structure. The efficiency of a data structure cannot be analyzed separately from those operations. This observation motivates the theoretical concept of an [[abstract data type]], a data structure that is defined indirectly by the operations that may be performed on it, and the mathematical properties of those operations (including their space and time cost).{{citation needed|date=January 2017}}
+
+==Examples==
+{{main article|List of data structures}}
+There are numerous types of data structures, generally built upon simpler [[primitive data type]]s:<ref>{{Cite book|title=Data structures|last=Seymour|first=Lipschutz|date=2014|publisher=McGraw Hill Education|isbn=9781259029967|edition=Revised first|location=New Delhi, India|oclc=927793728}}</ref>
+* An [[array data structure|''array'']] is a number of elements in a specific order, typically all of the same type (depending on the language, individual elements may either all be forced to be the same type, or may be of almost any type). Elements are accessed using an integer index to specify which element is required. Typical implementations allocate contiguous memory words for the elements of arrays (but this is not always a necessity). Arrays may be fixed-length or resizable.
+* A ''[[linked list]]'' (also just called ''list'') is a linear collection of data elements of any type, called nodes, where each node has itself a value, and points to the next node in the linked list. The principal advantage of a linked list over an array, is that values can always be efficiently inserted and removed without relocating the rest of the list. Certain other operations, such as [[random access]] to a certain element, are however slower on lists than on arrays.
+* A [[Record (computer science)|''record'']] (also called ''tuple'' or ''struct'') is an aggregate data structure. A record is a value that contains other values, typically in fixed number and sequence and typically indexed by names. The elements of records are usually called ''fields'' or ''members''.
+* A [[Union (computer science)|''union'']] is a data structure that specifies which of a number of permitted primitive types may be stored in its instances, e.g. ''float'' or ''long integer''. Contrast with a [[record (computer science)|record]], which could be defined to contain a float ''and'' an integer; whereas in a union, there is only one value at a time. Enough space is allocated to contain the widest member datatype.
+* A ''[[tagged union]]'' (also called [[variant type|''variant'']], ''variant record'', ''discriminated union'', or ''disjoint union'') contains an additional field indicating its current type, for enhanced type safety.
+* An [[Object (computer science)|''object'']] is a data structure that contains data fields, like a record does, as well as various [[Method (computer programming)|methods]] which operate on the data contents. An object is an in-memory instance of a class from a taxonomy. In the context of [[object-oriented programming]], records are known as [[plain old data structure]]s to distinguish them from objects.<ref>{{cite web|url=http://www.fnal.gov/docs/working-groups/fpcltf/Pkg/ISOcxx/doc/POD.html |accessdate=6 December 2016 |title=C++ Language Note: POD Types |author=Walter E. Brown |publisher=[[Fermi National Accelerator Laboratory]] |date=September 29, 1999|archive-url=https://web.archive.org/web/20161203130543/http://www.fnal.gov/docs/working-groups/fpcltf/Pkg/ISOcxx/doc/POD.html|archive-date=2016-12-03}}</ref>
+
+In addition, [[Graph (computer science)|''graphs'']] and ''[[binary trees]]'' are other commonly used data structures.
+
+==Language support==
+Most [[assembly language]]s and some low-level languages, such as [[BCPL]] (Basic Combined Programming Language), lack built-in support for data structures. On the other hand, many [[high-level programming language]]s and some higher-level assembly languages, such as [[MASM]], have special syntax or other built-in support for certain data structures, such as records and arrays. For example, the [[C (programming language)|C]] (a direct descendant of BCPL) and [[Pascal (programming language)|Pascal]] languages support [[Record (computer science)|structs]] and records, respectively, in addition to vectors (one-dimensional [[array data type|arrays]]) and multi-dimensional arrays.<ref name="gnu-c">{{cite web | url=https://www.gnu.org/software/gnu-c-manual/gnu-c-manual.html | title=The GNU C Manual | publisher=Free Software Foundation | accessdate=2014-10-15}}</ref><ref>{{cite web | url=http://www.freepascal.org/docs-html/ref/ref.html | title=Free Pascal: Reference Guide | publisher=Free Pascal | accessdate=2014-10-15}}</ref>
+
+Most programming languages feature some sort of [[Library (computing)|library]] mechanism that allows data structure implementations to be reused by different programs. Modern languages usually come with standard libraries that implement the most common data structures. Examples are the [[C++]] [[Standard Template Library]], the [[Java Collections Framework]], and the [[Microsoft]] [[.NET Framework]].
+
+Modern languages also generally support [[modular programming]], the separation between the [[interface (computing)|interface]] of a library module and its implementation. Some provide [[opaque data type]]s that allow clients to hide implementation details. [[Object-oriented programming language]]s, such as [[C++]], [[Java (programming language)|Java]], and [[Smalltalk]], typically use [[classes (computer science)|classes]] for this purpose.
+
+Many known data structures have [[concurrent data structure|concurrent]] versions which allow multiple computing threads to access a single concrete instance of a data structure simultaneously.<ref>{{cite web |author1=Mark Moir and Nir Shavit |title=Concurrent Data Structures |url=https://www.cs.tau.ac.il/~shanir/concurrent-data-structures.pdf |website=cs.tau.ac.il}}</ref>
+
+==See also==
+{{Wikipedia books|Data structures}}
+{{Div col|colwidth=15em}}
+* [[Abstract data type]]
+* [[Concurrent data structure]]
+* [[Data model]]
+* [[Dynamization]]
+* [[Linked data structure]]
+* [[List of data structures]]
+* [[Persistent data structure]]
+* [[Plain old data structure]]
+{{Div col end}}
+
+==References==
+{{Reflist}}
+
+==Bibliography==
+* Peter Brass, ''Advanced Data Structures'', [[Cambridge University Press]], 2008, {{ISBN|978-0521880374}}
+* [[Donald Knuth]], ''[[The Art of Computer Programming]]'', vol. 1. [[Addison-Wesley]], 3rd edition, 1997, {{ISBN|978-0201896831}}
+* Dinesh Mehta and [[Sartaj Sahni]], ''Handbook of Data Structures and Applications'', [[Chapman and Hall]]/[[CRC Press]], 2004, {{ISBN|1584884355}}
+* [[Niklaus Wirth]], ''Algorithms and Data Structures'', [[Prentice Hall]], 1985, {{ISBN|978-0130220059}}
+
+==Further reading==
+* [[Alfred Aho]], [[John Hopcroft]], and [[Jeffrey Ullman]], ''Data Structures and Algorithms'', Addison-Wesley, 1983, {{ISBN|0-201-00023-7}}
+* [[Gaston Gonnet|G. H. Gonnet]] and [[Ricardo Baeza-Yates|R. Baeza-Yates]], ''[https://users.dcc.uchile.cl/~rbaeza/handbook/hbook.html Handbook of Algorithms and Data Structures - in Pascal and C]'', second edition, Addison-Wesley, 1991, {{ISBN|0-201-41607-7}}
+* [[Ellis Horowitz]] and Sartaj Sahni, ''Fundamentals of Data Structures in Pascal'', [[Computer Science Press]], 1984, {{ISBN|0-914894-94-3}}
+
+==External links==
+{{Sister project links|wikt=data structure|commons=Category:Data structures|b=Data Structures|v=Topic:Data structures|n=no}}
+* [http://nist.gov/dads/ Descriptions] from the [[Dictionary of Algorithms and Data Structures]]
+* [http://www.cs.auckland.ac.nz/software/AlgAnim/ds_ToC.html Data structures course]
+* [http://msdn.microsoft.com/en-us/library/aa289148(VS.71).aspx An Examination of Data Structures from .NET perspective]
+* [http://people.cs.vt.edu/~shaffer/Book/C++3e20110915.pdf Schaffer, C. ''Data Structures and Algorithm Analysis'']
+
+{{Data structures}}
+{{Data types}}
+{{Data model}}
+
+{{Authority control}}
+
+{{DEFAULTSORT:Data Structure}}
+[[Category:Data structures| ]]
+
+
+
+
+
+
+
+
+
+
+{{Infobox data structure
+|name=Binary search tree
+|type=tree
+|invented_by=P.F. Windley, [[Andrew Donald Booth|A.D. Booth]], [[Andrew Colin|A.J.T. Colin]], and [[Thomas N. Hibbard|T.N. Hibbard]]
+|invented_year=1960
+|space_avg={{math|{{math|O(''n'')}}}}
+|space_worst={{math|{{math|O(''n'')}}}}
+|search_avg={{math|{{math|O(log ''n'')}}}}
+|search_worst={{math|{{math|O(''n'')}}}}
+|insert_avg={{math|{{math|O(log ''n'')}}}}
+|insert_worst={{math|{{math|O(''n'')}}}}
+|delete_avg={{math|{{math|O(log ''n'')}}}}
+|delete_worst={{math|{{math|O(''n'')}}}}
+}}
+
+[[File:Binary search tree.svg|right|200px|thumb|A binary search tree of size 9 and depth 3, with 8 at the root. The leaves are not drawn.]]
+
+In [[computer science]], '''binary search trees''' ('''BST'''), sometimes called '''ordered''' or '''sorted binary trees''', are a particular type of [[Collection (abstract data type)|container]]: [[data structure]]s that store "items" (such as numbers, names etc.) in [[computer memory|memory]]. They allow fast lookup, addition and removal of items, and can be used to implement either [[Set (abstract data type)|dynamic sets]] of items, or [[lookup table]]s that allow finding an item by its ''key'' (e.g., finding the phone number of a person by name).
+
+Binary search trees keep their keys in sorted order, so that lookup and other operations can use the principle of [[binary search]]: when looking for a key in a tree (or a place to insert a new key), they traverse the tree from root to leaf, making comparisons to keys stored in the nodes of the tree and deciding, on the basis of the comparison, to continue searching in the left or right subtrees. On average, this means that each comparison allows the operations to skip about half of the tree, so that each lookup, insertion or deletion takes [[time complexity|time proportional to]] the [[logarithm]] of the number of items stored in the tree. This is much better than the [[linear time]] required to find items by key in an (unsorted) array, but slower than the corresponding operations on [[hash table]]s.
+
+Several variants of the binary search tree have been studied in computer science; this article deals primarily with the basic type, making references to more advanced types when appropriate.
+
+==Definition==
+A binary search tree is a [[rooted tree|rooted]] [[binary tree]], whose internal nodes each store a key (and optionally, an associated value) and each have two distinguished sub-trees, commonly denoted ''left'' and ''right''. The tree additionally satisfies the [[binary search]] property, which states that the key in each node must be greater than or equal to any key stored in the left sub-tree, and less than or equal to any key stored in the right sub-tree.<ref name="clrs">{{Introduction to Algorithms|3}}</ref>{{rp|287}} The leaves (final nodes) of the tree contain no key and have no structure to distinguish them from one another. 
+
+Frequently, the information represented by each node is a record rather than a single data element.  However, for sequencing purposes, nodes are compared according to their keys rather than any part of their associated records. The major advantage of binary search trees over other data structures is that the related [[sorting algorithm]]s and [[search algorithm]]s such as [[in-order traversal]] can be very efficient; they are also easy to code.
+
+Binary search trees are a fundamental data structure used to construct more abstract data structures such as [[set (computer science)|sets]], [[set (computer science)#Multiset|multisets]], and [[associative array]]s.
+* When inserting or searching for an element in a binary search tree, the key of each visited node has to be compared with the key of the element to be inserted or found.
+* The shape of the binary search tree depends entirely on the order of insertions and deletions, and can become degenerate.
+* After a long intermixed sequence of random insertion and deletion, the expected height of the tree approaches square root of the number of keys, {{math|{{radic|''n''}}}}, which grows much faster than {{math|log ''n''}}.
+* There has been a lot of research to prevent degeneration of the tree resulting in worst case time complexity of {{math|O(''n'')}} (for details see section [[#Types|Types]]).
+
+=== Order relation ===
+Binary search requires an order relation by which every element (item) can be compared with every other element in the sense of a [[total preorder]]. The part of the element which effectively takes place in the comparison is called its ''key''. Whether duplicates, i.e. different elements with same key, shall be allowed in the tree or not, does not depend on the order relation, but on the application only.
+
+In the context of binary search trees a total preorder is realized most flexibly by means of a [[three-way comparison]] [[subroutine]].
+
+==Operations==
+Binary search trees support three main operations: insertion of elements, deletion of elements, and lookup (checking whether a key is present).
+
+===Searching===
+Searching a binary search tree for a specific key can be programmed [[recursion (computer science)|recursively]] or [[iteration#Computing|iteratively]].
+
+We begin by examining the [[tree (data structure)#root nodes|root node]]. If the tree is ''null'', the key we are searching for does not exist in the tree. Otherwise, if the key equals that of the root, the search is successful and we return the node. If the key is less than that of the root, we search the left subtree. Similarly, if the key is greater than that of the root, we search the right subtree. This process is repeated until the key is found or the remaining subtree is ''null''. If the searched key is not found after a ''null'' subtree is reached, then the key is not present in the tree. This is easily expressed as a recursive algorithm (implemented in [[Python (programming language)|Python]]):
+
+<source lang="python" line>
+def search_recursively(key, node):
+    if node is None or node.key == key:
+        return node
+    if key < node.key:
+        return search_recursively(key, node.left)
+    # key > node.key
+    return search_recursively(key, node.right)
+</source>
+
+The same algorithm can be implemented iteratively:
+
+<source lang="python" line="1">
+def search_iteratively(key, node): 
+    current_node = node
+    while current_node is not None:
+        if key == current_node.key:
+            return current_node
+        if key < current_node.key:
+            current_node = current_node.left
+        else: # key > current_node.key:
+            current_node = current_node.right
+    return current_node
+</source>
+These two examples rely on the order relation being a total order.
+
+If the order relation is only a total preorder a reasonable extension of the functionality is the following: also in case of equality search down to the leaves in a direction specified by the user. A [[Tree sort|binary tree sort]] equipped with such a comparison function becomes [[Sorting algorithm#Stability|stable]].
+
+Because in the worst case this algorithm must search from the root of the tree to the leaf farthest from the root, the search operation takes time proportional to the tree's ''height'' (see [[Tree (data structure)#Terminology|tree terminology]]). On average, binary search trees with {{math|''n''}} nodes have {{math|[[big O notation|O]](log ''n'')}} height.{{refn|group=note|The notion of an average BST is made precise as follows. Let a random BST be one built using only insertions out of a sequence of unique elements in random order (all permutations equally likely); then the [[expected value|expected]] height of the tree is {{math|O(log ''n'')}}. If deletions are allowed as well as insertions, "little is known about the average height of a binary search tree".<ref name="clrs" />{{rp|300}}}} However, in the worst case, binary search trees can have {{math|O(''n'')}} height, when the unbalanced tree resembles a [[linked list]] ([[binary Tree#Types of binary trees|degenerate tree]]).
+
+===Insertion===<!-- This section is linked from [[Red-black tree]] -->
+Insertion begins as a search would begin; if the key is not equal to that of the root, we search the left or right subtrees as before. Eventually, we will reach an external node and add the new key-value pair (here encoded as a record 'newNode') as its right or left child, depending on the node's key. In other words, we examine the root and recursively insert the new node to the left subtree if its key is less than that of the root, or the right subtree if its key is greater than or equal to the root.
+
+Here's how a typical binary search tree insertion might be performed in a binary tree in [[C++]]:
+
+<source lang="cpp">
+void insert(Node*& root, int key, int value) {
+  if (!root) 
+    root = new Node(key, value);
+  else if (key == root->key)
+    root->value = value;
+  else if (key < root->key)
+    insert(root->left, key, value);
+  else  // key > root->key
+    insert(root->right, key, value);
+}
+</source>
+
+The above ''destructive'' procedural variant modifies the tree in place. It uses only constant heap space (and the iterative version uses constant stack space as well), but the prior version of the tree is lost. Alternatively, as in the following [[Python (programming language)|Python]] example, we can reconstruct all ancestors of the inserted node; any reference to the original tree root remains valid, making the tree a [[persistent data structure]]:
+
+<source lang="python">
+def binary_tree_insert(node, key, value):
+   if node is None:
+       return NodeTree(None, key, value, None)
+   if key == node.key:
+       return NodeTree(node.left, key, value, node.right)
+   if key < node.key:
+       return NodeTree(binary_tree_insert(node.left, key, value), node.key, node.value, node.right)
+   return NodeTree(node.left, node.key, node.value, binary_tree_insert(node.right, key, value))
+</source>
+
+The part that is rebuilt uses {{math|[[big O notation|O]](log ''n'')}} space in the average case and {{math|O(''n'')}} in the worst case.
+
+In either version, this operation requires time proportional to the height of the tree in the worst case, which is {{math|O(log ''n'')}} time in the average case over all trees, but {{math|O(''n'')}} time in the worst case.
+
+Another way to explain insertion is that in order to insert a new node in the tree, its key is first compared with that of the root. If its key is less than the root's, it is then compared with the key of the root's left child. If its key is greater, it is compared with the root's right child. This process continues, until the new node is compared with a leaf node, and then it is added as this node's right or left child, depending on its key: if the key is less than the leaf's key, then it is inserted as the leaf's left child, otherwise as the leaf's right child.
+
+There are other ways of inserting nodes into a binary tree, but this is the only way of inserting nodes at the leaves and at the same time preserving the BST structure.
+
+===Deletion===<!--This section is linked from [[Red-black tree]]-->
+When removing a node from a binary ''search'' tree it is mandatory to maintain the in-order sequence of the nodes.
+There are many possibilities to do this. However, the following method which has been proposed by T. Hibbard in 1962<ref>s. [[Robert Sedgewick (computer scientist)|Robert Sedgewick]], Kevin Wayne: [http://www.albertstam.com/Algorithms.pdf ''Algorithms Fourth Edition.''] Pearson Education, 2011, {{ISBN|978-0-321-57351-3}}, p. 410.</ref> guarantees that the heights of the subject subtrees are changed by at most one.
+There are three possible cases to consider:
+* Deleting a node with no children: simply remove the node from the tree.
+* Deleting a node with one child: remove the node and replace it with its child.
+* Deleting a node with two children: call the node to be deleted ''D''.  Do not delete ''D''.  Instead, choose either its [[tree traversal|in-order]] predecessor node or its in-order successor node as replacement node ''E'' (s. figure). Copy the user values of ''E'' to ''D''.<ref group="note">Of course, a generic software package has to work the other way around: It has to leave the user data untouched and to furnish ''E'' with all the BST links to and from ''D''.</ref> If ''E'' does not have a child simply remove ''E'' from its previous parent ''G''. If ''E'' has a child, say ''F'', it is a right child. Replace ''E'' with ''F'' at ''E''<nowiki>'s</nowiki> parent.
+[[File:AVL-tree-delete.svg|thumb|500px|right|Deleting a node with two children from a binary search tree. First the leftmost node in the right subtree, the in-order successor ''E'', is identified. Its value is copied into the node ''D'' being deleted. The in-order successor can then be easily deleted because it has at most one child. The same method works symmetrically using the in-order predecessor ''C''.]]
+
+In all cases, when ''D'' happens to be the root, make the replacement node root again.
+
+Broadly speaking, nodes with children are harder to delete. As with all binary trees, a node's in-order successor is its right subtree's left-most child, and a node's in-order predecessor is the left subtree's right-most child. In either case, this node will have only one or no child at all. Delete it according to one of the two simpler cases above.
+
+Consistently using the in-order successor or the in-order predecessor for every instance of the two-child case can lead to an [[self-balancing binary search tree|unbalanced]] tree, so some implementations select one or the other at different times.
+
+Runtime analysis: Although this operation does not always traverse the tree down to a leaf, this is always a possibility; thus in the worst case it requires time proportional to the height of the tree. It does not require more even when the node has two children, since it still follows a single path and does not visit any node twice.
+
+<source lang="python">
+def find_min(self):   # Gets minimum node in a subtree
+    current_node = self
+    while current_node.left_child:
+        current_node = current_node.left_child
+    return current_node
+
+def replace_node_in_parent(self, new_value=None):
+    if self.parent:
+        if self == self.parent.left_child:
+            self.parent.left_child = new_value
+        else:
+            self.parent.right_child = new_value
+    if new_value:
+        new_value.parent = self.parent
+
+def binary_tree_delete(self, key):
+    if key < self.key:
+        self.left_child.binary_tree_delete(key)
+        return
+    if key > self.key:
+        self.right_child.binary_tree_delete(key)
+        return
+    # delete the key here
+    if self.left_child and self.right_child: # if both children are present
+        successor = self.right_child.find_min()
+        self.key = successor.key
+        successor.binary_tree_delete(successor.key)
+    elif self.left_child:   # if the node has only a *left* child
+        self.replace_node_in_parent(self.left_child)
+    elif self.right_child:  # if the node has only a *right* child
+        self.replace_node_in_parent(self.right_child)
+    else:
+        self.replace_node_in_parent(None) # this node has no children
+</source>
+
+===Traversal===
+{{main article|Tree traversal}}
+Once the binary search tree has been created, its elements can be retrieved [[in-order traversal|in-order]] by [[recursion|recursively]] traversing the left subtree of the root node, accessing the node itself, then recursively traversing the right subtree of the node, continuing this pattern with each node in the tree as it's recursively accessed. As with all binary trees, one may conduct a [[pre-order traversal]] or a [[post-order traversal]], but neither are likely to be useful for binary ''search'' trees. An in-order traversal of a binary search tree will always result in a sorted list of node items (numbers, strings or other comparable items).
+
+The code for in-order traversal in Python is given below. It will call '''[[Callback (computer programming)|callback]]''' (some function the programmer wishes to call on the node's value, such as printing to the screen) for every node in the tree.
+
+<source lang="python">
+def traverse_binary_tree(node, callback):
+    if node is None:
+        return
+    traverse_binary_tree(node.leftChild, callback)
+    callback(node.value)
+    traverse_binary_tree(node.rightChild, callback)
+</source>
+
+Traversal requires {{math|[[big O notation|O]](''n'')}} time, since it must visit every node. This algorithm is also {{math|O(''n'')}}, so it is [[asymptotically optimal]].
+
+Traversal can also be implemented [[Iteration#Computing|iteratively]]. For certain applications, e.g. greater equal search, approximative search, an operation for {{anchor|sst}}''single step (iterative) traversal'' can be very useful. This is, of course, implemented without the callback construct and takes {{math|O(1)}} on average and {{math|O(log ''n'')}} in the worst case.
+
+===Verification===
+Sometimes we already have a binary tree, and we need to determine whether it is a BST. This problem has a simple recursive solution.
+
+The BST property—every node on the right subtree has to be larger than the current node and every node on the left subtree has to be smaller than the current node—is the key to figuring out whether a tree is a BST or not. The [[greedy algorithm]]—simply traverse the tree, at every node check whether the node contains a value larger than the value at the left child and smaller than the value on the right child—does not work for all cases. Consider the following tree:
+
+      20
+     /  \
+   10    30
+        /  \
+       5    40
+
+In the tree above, each node meets the condition that the node contains a value larger than its left child and smaller than its right child hold, and yet it is not a BST: the value 5 is on the right subtree of the node containing 20, a violation of the BST property.
+
+Instead of making a decision based solely on the values of a node and its children, we also need information flowing down from the parent as well. In the case of the tree above, if we could remember about the node containing the value 20, we would see that the node with value 5 is violating the BST property contract.
+
+So the condition we need to check at each node is: 
+* if the node is the left child of its parent, then it must be smaller than (or equal to) the parent and it must pass down the value from its parent to its right subtree to make sure none of the nodes in that subtree is greater than the parent
+* if the node is the right child of its parent, then it must be larger than the parent and it must pass down the value from its parent to its left subtree to make sure none of the nodes in that subtree is lesser than the parent.
+
+A recursive solution in C++ can explain this further:
+<source lang="c">
+struct TreeNode {
+    int key;
+    int value;
+    struct TreeNode *left;
+    struct TreeNode *right;
+};
+
+bool isBST(struct TreeNode *node, int minKey, int maxKey) {
+    if (node == NULL) return true;
+    if (node->key < minKey || node->key > maxKey) return false;
+    
+    return isBST(node->left, minKey, node->key-1) && isBST(node->right, node->key+1, maxKey);
+}
+</source>
+
+<code>node->key+1</code> and <code>node->key-1</code> are done to allow only distinct elements in BST.
+
+If we want same elements to also be present, then we can use only <code>node->key</code> in both places.
+
+The initial call to this function can be something like this:
+
+<source lang="c">
+if (isBST(root, INT_MIN, INT_MAX)) {
+    puts("This is a BST.");
+} else {
+    puts("This is NOT a BST!");
+}
+</source>
+
+Essentially we keep creating a valid range (starting from [MIN_VALUE, MAX_VALUE]) and keep shrinking it down for each node as we go down recursively.
+
+As pointed out in section [[#Traversal]], an in-order traversal of a binary ''search'' tree returns the nodes sorted. Thus we only need to keep the last visited node while traversing the tree and check whether its key is smaller (or smaller/equal, if duplicates are to be allowed in the tree) compared to the current key.
+
+==Examples of applications==
+
+===Sort===
+{{main article|Tree sort}}
+A binary search tree can be used to implement a simple [[sorting algorithm]]. Similar to [[heapsort]], we insert all the values we wish to sort into a new ordered data structure—in this case a binary search tree—and then traverse it in order.
+
+The worst-case time of <code>build_binary_tree</code> is {{math|O(''n''<sup>2</sup>)}}—if you feed it a sorted list of values, it chains them into a [[linked list]] with no left subtrees. For example, <code>build_binary_tree([1, 2, 3, 4, 5])</code> yields the tree <code>(1 (2 (3 (4 (5)))))</code>.
+
+There are several schemes for overcoming this flaw with simple binary trees; the most common is the [[self-balancing binary search tree]]. If this same procedure is done using such a tree, the overall worst-case time is {{math|O(''n'' log ''n'')}}, which is [[asymptotically optimal]] for a [[comparison sort]]. In practice, the added overhead in time and space for a tree-based sort (particularly for node [[dynamic memory allocation|allocation]]) make it inferior to other asymptotically optimal sorts such as  [[heapsort]] for static list sorting. On the other hand, it is one of the most efficient methods of ''incremental sorting'', adding items to a list over time while keeping the list sorted at all times.
+
+===Priority queue operations===
+Binary search trees can serve as [[priority queue]]s: structures that allow insertion of arbitrary key as well as lookup and deletion of the minimum (or maximum) key. Insertion works as previously explained. ''Find-min'' walks the tree, following left pointers as far as it can without hitting a leaf:
+
+ ''// Precondition: T is not a leaf''
+ '''function''' find-min(T):
+     '''while''' hasLeft(T):
+         T ? left(T)
+     '''return''' key(T)
+
+''Find-max'' is analogous: follow right pointers as far as possible. ''Delete-min'' (''max'') can simply look up the minimum (maximum), then delete it. This way, insertion and deletion both take logarithmic time, just as they do in a [[binary heap]], but unlike a binary heap and most other priority queue implementations, a single tree can support all of ''find-min'', ''find-max'', ''delete-min'' and ''delete-max'' at the same time, making binary search trees suitable as [[double-ended priority queue]]s.<ref name="mehlhorn">{{cite book |last1=Mehlhorn |first1=Kurt |author1-link=Kurt Mehlhorn|first2=Peter |last2=Sanders|author2-link=Peter Sanders (computer scientist) |title=Algorithms and Data Structures: The Basic Toolbox |publisher=Springer |year=2008 |url=http://people.mpi-inf.mpg.de/~mehlhorn/ftp/Toolbox/SortedSequences.pdf}}</ref>{{rp|156}}
+
+==Types==
+There are many types of binary search trees. [[AVL tree]]s and [[red-black tree]]s are both forms of [[self-balancing binary search tree]]s. A [[splay tree]] is a binary search tree that automatically moves frequently accessed elements nearer to the root. In a [[treap]] (''tree [[heap (data structure)|heap]]''), each node also holds a (randomly chosen) priority and the parent node has higher priority than its children. [[Tango tree]]s are trees optimized for fast searches.
+[[T-tree]]s are binary search trees optimized to reduce storage space overhead, widely used for in-memory databases
+
+A degenerate tree is a tree where for each parent node, there is only one associated child node. It is unbalanced and, in the worst case, performance degrades to that of a linked list. If your add node function does not handle re-balancing, then you can easily construct a degenerate tree by feeding it with data that is already sorted. What this means is that in a performance measurement, the tree will  essentially behave like a linked list data structure.
+
+===Performance comparisons===
+D. A. Heger (2004)<ref>{{Citation | title=A Disquisition on The Performance Behavior of Binary Search Tree Data Structures | first1=Dominique A. | last1=Heger | year=2004 | journal=European Journal for the Informatics Professional | volume=5 | url=http://www.cepis.org/upgrade/files/full-2004-V.pdf | issue=5 | pages=67–75}}</ref> presented a performance comparison of binary search trees. [[Treap]] was found to have the best average performance, while [[red-black tree]] was found to have the smallest amount of performance variations.
+
+===Optimal binary search trees===
+{{Main article|Optimal binary search tree}}
+[[File:BinaryTreeRotations.svg|thumb|300px|Tree rotations are very common internal operations in binary trees to keep perfect, or near-to-perfect, internal balance in the tree.]]
+If we do not plan on modifying a search tree, and we know exactly how often each item will be accessed, we can construct<ref>{{cite web|last=Gonnet|first=Gaston|title=Optimal Binary Search Trees|url=http://linneus20.ethz.ch:8080/4_7_1.html|work=Scientific Computation|publisher=ETH Zürich|accessdate=1 December 2013|deadurl=yes|archiveurl=https://web.archive.org/web/20141012033537/http://linneus20.ethz.ch:8080/4_7_1.html|archivedate=12 October 2014|df=}}</ref> an ''optimal binary search tree'', which is a search tree where the average cost of looking up an item (the ''expected search cost'') is minimized.
+
+Even if we only have estimates of the search costs, such a system can considerably speed up lookups on average. For example, if you have a BST of English words used in a [[spell checker]], you might balance the tree based on word frequency in [[text corpus|text corpora]], placing words like ''the'' near the root and words like ''agerasia'' near the leaves. Such a tree might be compared with [[Huffman tree]]s, which similarly seek to place frequently used items near the root in order to produce a dense information encoding; however, Huffman trees store data elements only in leaves, and these elements need not be ordered.
+
+If we do not know the sequence in which the elements in the tree will be accessed in advance, we can use [[splay tree]]s which are asymptotically as good as any static search tree we can construct for any particular sequence of lookup operations.
+
+''Alphabetic trees'' are Huffman trees with the additional constraint on order, or, equivalently, search trees with the modification that all elements are stored in the leaves. Faster algorithms exist for ''optimal alphabetic binary trees'' (OABTs).
+
+{{clear}}
+
+==See also==
+{{Div col}}
+* [[Binary search algorithm]]
+* [[Search tree]]
+* [[Self-balancing binary search tree]]
+* [[AVL tree]]
+* [[Red–black tree]]
+* [[Randomized binary search tree]]
+* [[Tango tree]]
+{{colend}}
+
+==Notes==
+{{Reflist|group=note}}
+
+==References==
+{{Reflist}}
+
+==Further reading==
+* {{DADS|Binary Search Tree|binarySearchTree}}
+* {{cite book|last1=Cormen|first1=Thomas H. |authorlink1=Thomas H. Cormen|last2=Leiserson|first2=Charles E. |authorlink2=Charles E. Leiserson|last3=Rivest|first3=Ronald L. |authorlink3=Ronald L. Rivest|authorlink4=Clifford Stein|first4=Clifford |last4=Stein|title=[[Introduction to Algorithms]]|edition=2nd|year=2001|publisher=MIT Press & McGraw-Hill|isbn=0-262-03293-7|pages=253–272, 356–363|chapter=12: Binary search trees, 15.5: Optimal binary search trees}}
+* {{cite web|url=http://nova.umuc.edu/~jarc/idsv/lesson1.html|title=Binary Tree Traversals|last=Jarc|first=Duane J.|date=3 December 2005|work=Interactive Data Structure Visualizations|publisher=[[University of Maryland]]}}
+* {{cite book|last=Knuth|first=Donald|authorlink=Donald Knuth|title=[[The Art of Computer Programming]]|edition=3rd|volume=3: "Sorting and Searching"|year=1997|publisher=Addison-Wesley|isbn=0-201-89685-0|pages=426–458|chapter=6.2.2: Binary Tree Searching}}
+* {{cite web|url=http://employees.oneonta.edu/zhangs/PowerPointPlatform/resources/samples/binarysearchtree.ppt|title=Binary Search Tree|last=Long|first=Sean|work=Data Structures and Algorithms Visualization-A PowerPoint Slides Based Approach|publisher=[[SUNY Oneonta]]|format=[[Microsoft PowerPoint|PPT]]}}
+* {{cite web|url=http://cslibrary.stanford.edu/110/BinaryTrees.html|title=Binary Trees|last=Parlante|first=Nick|year=2001|work=CS Education Library|publisher=[[Stanford University]]}}
+
+==External links==
+* [http://btv.melezinek.cz Binary Tree Visualizer] (JavaScript animation of various BT-based data structures)
+* {{cite web|url=http://people.ksp.sk/~kuko/bak/|title=Binary Search Trees|last=Kovac|first=Kubo|publisher=Korešponden?ný seminár z programovania|format=[[Java applet]]}}
+* {{cite web|url=http://jdserver.homelinux.org/wiki/Binary_Search_Tree|title=Binary Search Tree|last=Madru|first=Justin|date=18 August 2009|work=JDServer|deadurl=yes|archiveurl=https://web.archive.org/web/20100328221436/http://jdserver.homelinux.org/wiki/Binary_Search_Tree|archivedate=28 March 2010|df=}} C++ implementation.
+* [http://code.activestate.com/recipes/286239/ Binary Search Tree Example in Python]
+* {{cite web|url=http://msdn.microsoft.com/en-us/library/1sf8shae%28v=vs.80%29.aspx|title=References to Pointers (C++)|year=2005|work=[[MSDN]]|publisher=[[Microsoft]]}} Gives an example binary tree implementation.
+
+{{CS-Trees}}
+{{Data structures}}
+
+{{DEFAULTSORT:Binary search tree}}
+[[Category:Articles with example C++ code]]
+[[Category:Articles with example Python code]]
+[[Category:Binary trees]]
+[[Category:Data types]]
+[[Category:Search trees]]
+
+
+
+
+
+
+
+
+
+
+{{Short description|Abstract data type simulating a hierarchical tree structure and represented as a set of linked nodes}}
+{{hatnote|Not to be confused with [[trie]], a specific type of tree data structure.}}
+{{hatnote|Not to be confused with [[tree (graph theory)]], a specific type of mathematical object.}}
+
+{{Refimprove|date=August 2010}}
+[[File:binary tree.svg|right|192px|thumb|A simple unordered tree; in this diagram, the node labeled 7 has two children, labeled 2 and 6, and one parent, labeled 2. The root node, at the top, has no parent.]]
+In [[computer science]], a '''tree''' is a widely used [[abstract data type]] (ADT)—or [[data structure]] implementing this ADT—that simulates a hierarchical [[tree structure]], with a root value and subtrees of children with a parent node, represented as a set of linked [[Vertex (graph theory)|nodes]].
+
+A tree data structure can be defined [[Recursion|recursively]] (locally) as a collection of [[node (computer science)|nodes]] (starting at a root node), where each node is a data structure consisting of a value, together with a list of references to nodes (the "children"), with the constraints that no reference is duplicated, and none points to the root.
+
+Alternatively, a tree can be defined abstractly as a whole (globally) as an [[ordered tree]], with a value assigned to each node. Both these perspectives are useful: while a tree can be analyzed mathematically as a whole, when actually represented as a data structure it is usually represented and worked with separately by node (rather than as a set of nodes and an [[adjacency list]] of edges between nodes, as one may represent a [[#Digraphs|digraph]], for instance). For example, looking at a tree as a whole, one can talk about "the parent node" of a given node, but in general as a data structure a given node only contains the list of its children, but does not contain a reference to its parent (if any).
+
+==Preliminary definition==
+{| style="float:right"
+| [[File:Directed graph, disjoint.svg|thumb|x100px|{{color|#800000|Not a tree}}: two non-[[Connectivity (graph theory)#Definitions of components, cuts and connectivity|connected]] parts, A→B and C→D→E. There is more than one root.]]
+|}
+{| style="float:right"
+| [[File:Directed graph with branching SVG.svg|thumb|x100px|{{color|#800000|Not a tree}}: undirected cycle 1-2-4-3. 4 has more than one parent (inbound edge).]]
+|}
+{| style="float:right"
+| [[File:Directed graph, cyclic.svg|thumb|x100px|{{color|#800000|Not a tree}}: cycle B→C→E→D→B. B has more than one parent (inbound edge).]]
+|}
+{| style="float:right"
+| [[File:Graph single node.svg|thumb|x50px|{{color|#800000|Not a tree}}: cycle A→A. A is the root but it also has a parent.]]
+|}
+{| style="float:right"
+| [[File:Directed Graph Edge.svg|thumb|x50px|Each linear list is trivially {{color|#008000|a tree}}]]
+|}
+
+A tree is a data structure made up of nodes or vertices and edges without having any cycle. The tree with no nodes is called the '''null''' or '''empty''' tree. A tree that is not empty consists of a root node and potentially many levels of additional nodes that form a hierarchy.
+
+<div style="clear:both"></div>
+
+=={{anchor|definition|Definition}}Mathematical definition==
+
+=== Unordered tree ===
+
+Mathematically, an ''unordered tree''<ref name="Kuboyama2007">
+{{cite journal | title=Matching and learning in trees
+  | author=Tetsuji Kuboyama
+  | url=http://tk.cc.gakushuin.ac.jp/doc/kuboyama2007phd.pdf#page=36
+  | journal=Doctoral Thesis, University of Tokyo
+  | year=2007}}
+</ref> (or "algebraic tree"<ref>{{cite web | url=http://www.atalon.cz/vfs-m/linux-vfs-model/ | title=The Linux VFS Model: Naming structure}}</ref>)
+can be defined as an [[algebraic structure]] ''(X,&nbsp;parent)'' where ''X'' is the non-empty carrier set of ''nodes'' and ''parent'' is a function on ''X'' which assigns each node ''x'' its "parent" node, ''parent(x)''. The structure is subject to the condition that every non-empty [[subalgebra]] must have the same [[Fixed point (mathematics)|fixed point]]. That is, there must be a unique "root" node ''r'', such that ''parent(r) = r'' and for every node ''x'', some iterative application ''parent(parent(&hellip;parent(x)&hellip;))'' equals ''r''.
+
+There are several equivalent definitions.
+As the closest alternative, one can define unordered trees as [[Partial algebra | ''partial'' algebras]] 
+''(X,&nbsp;parent)''
+which are obtained from the total algebras described above by letting ''parent(r)'' be undefined.
+That is, the root ''r'' is the only node on which the ''parent'' function is not defined and for every node 
+''x'', the root is [[Reachability | reachable]] from ''x'' in the [[directed graph]] ''(X,&nbsp;parent)''.
+This definition is in fact coincident with that of an [[Arborescence (graph theory) | anti-arborescence]].
+
+Another equivalent definition is that of a [[Tree (set theory)|set-theoretic tree]] that is singly-rooted and whose height is at most [[Ordinal_number#Ordinals_extend_the_natural_numbers|ω]]. That is, the algebraic structures ''(X, parent)'' are equivalent to [[Partially ordered set|partial orders]] ''(X, &le;)'' that have a [[Greatest_and_least_elements|top element]] ''r''  and whose every principal [[Upper set|upset]] (aka [[principal filter]]) is a finite [[Total_order#Chains|chain]]. 
+To be precise, we should speak about an [[Inverse order | inverse]] set-theoretic tree since the set-theoretic definition usually employs opposite ordering.  
+The correspondence between ''(X, parent)'' and ''(X, &le;)'' is established via reflexive [[transitive closure]] / [[Transitive reduction | reduction]], with the reduction resulting in the "partial" version without the root cycle.
+
+The definition of [[Tree_(descriptive_set_theory) | trees in descriptive set theory]] (DST) utilizes the 
+representation of partial orders ''(X, &ge;)'' as [[Substring#Prefix | prefix]] orders between finite sequences. In turns out that up to [[Order isomorphism | isomorphism]], there is a one-to-one correspondence between the (inverse of) DST trees and the tree structures defined so far.
+
+We can refer to the four equivalent characterizations as to 
+''tree as an algebra'',
+''tree as a partial algebra'',
+''tree as a partial order'', and
+''tree as a prefix order''.
+There is also a fifth equivalent definition &ndash; that of a 
+[[Tree_(graph_theory)#Rooted_tree | graph-theoretic rooted tree]] which is just a connected acyclic 
+[[Rooted_graph | rooted]] [[Graph theory | graph]].
+
+<hr>
+
+The expression of trees as (partial) algebras
+<!-- {{efn| also called [[Functional graph | functional graphs]] }} --> 
+''(X, parent)'' follows directly the implementation of tree structures using ''parent pointers''. Typically, the partial version is used in which the root node has no parent defined. However, in some implementations or models even the ''parent(r) = r'' circularity is established. Notable examples: 
+<ul>
+<li>
+The Linux [[Virtual File System| VFS]]  where "The root dentry has a d_parent that points to itself" <ref>{{cite web | author=Bruce Fields | url=http://www.fieldses.org/~bfields/kernel/vfs.txt | title=Notes on the Linux kernel}}</ref>.
+<li>
+The concept of an ''instantiation tree''
+<ref>{{cite journal | publisher=North-Holland | author=Pierre Cointe | title=Metaclasses are First Class: the ObjVlisp Model | journal=Proceeding OOPSLA '87 Conference proceedings on Object-oriented programming systems, languages and applications | year=1987}}</ref>
+<ref>{{cite book | publisher=Springer | year=1995 | author=Wolfgang Klas, Michael Schrefl | title=Metaclasses and Their Application: Data Model Tailoring and Database Integration}}</ref>
+<ref>{{cite web | url=http://www.atalon.cz/om/what-is-a-metaclass/ | title=What Is a Metaclass? }}</ref>
+from [[object-oriented programming]]. In this case, the root node is the top [[metaclass]] &ndash; the only [[Class (computer programming)|class]] that is a direct instance of itself.
+</ul>
+
+Note that the above definition admits ''infinite'' trees. This allows for the description of infinite structures supported by some implementations via [[lazy evaluation]]. A notable example is the [[infinite regress]] of [[Eigenclass model | eigenclasses]] from the [[Ruby (programming language) | Ruby]] object model.<ref>
+{{cite web | url=http://www.atalon.cz/rb-om/ruby-object-model/ | title=The Ruby Object Model: Data structure in detail }}</ref>
+In this model, the tree established via <code>superclass</code> links between non-terminal objects is infinite and has an infinite branch (a single infinite branch of "helix" objects &ndash; see the [[Metaclass#In_Ruby | diagram]]).
+
+==== Sibling sets ====
+
+In every unordered tree <em>(X, parent)</em> there is a distinguished [[Partition of a set | partition]] of the set <em>X</em> of nodes into <em>sibling sets</em>. 
+Two non-root nodes <em>x</em>, <em>y</em> belong to the same sibling set if 
+<em>parent(x)&nbsp;=&nbsp;parent(y)</em>.
+The root node <em>r</em> forms the [[Singleton set | singleton]] sibling set <em>{r}</em>. {{efn|
+Alternatively, a "partial" version can be employed by excluding <em>{r}</em>.}}
+A tree is said to be <em>locally finite</em> or <em>finitely branching</em> if each of its sibling sets is finite.
+
+Each pair of distinct siblings is [[Comparability|incomparable]] in <em>&le;</em>.
+This is why the word <em>unordered</em> is used in the definition.
+Such a terminology might become misleading when all sibling sets are singletons, i.e. when the set <em>X</em> of all nodes is [[Total order | totally ordered]] (and thus [[Well-order | well-ordered]]) by <em>&le;</em>. 
+In such a case we might speak about a <em>singly-branching tree</em> instead.
+
+==== Using set inclusion ====
+
+As with every partially ordered set, tree structures <em>(X, &le;)</em> can be represented by [[containment order]] &ndash; by  [[Set system | set systems]] in which <em>&le;</em> is coincident with <em><span style="font-style:normal">&sube;</span></em>, the induced [[Set inclusion | inclusion]] order.
+Consider a structure <em>(U, &#8497;)</em> such that <em>U</em> is a non-empty set, and <em>&#8497;</em> is a set of subsets of <em>U</em> such that the following are satisfied:
+<!-- ℙ(''S'') -->
+<ol>
+<li>
+<em><span style="font-style:normal">&empty;</span> <span style="font-style:normal">&notin;</span> &#8497;</em>.
+&nbsp; (That is, <em>(U, &#8497;)</em> is a [[hypergraph]].)
+<li>
+<em>U <span style="font-style:normal">&isin;</span> &#8497;</em>.
+<li>
+For every <em>X</em>, <em>Y</em> from <em>&#8497;</em>, &nbsp;
+<em>X <span style="font-style:normal">&cap;</span> Y  <span style="font-style:normal">&isin;</span> 
+{<span style="font-style:normal">&empty;</span>, X, Y}</em>.
+&nbsp; (That is, <em>&#8497;</em> is a <em>laminar</em> family.<ref>{{cite book
+| author=B. Korte, and J. Vygen
+| title=Combinatorial optimization
+| publisher=Springer, Heidelberg
+| year=2012
+}}</ref>)
+
+<li>
+For every <em>X</em> from <em>&#8497;</em>, &nbsp;
+there are only finitely many
+<em>Y</em> from <em>&#8497;</em> such that
+<em>X <span style="font-style:normal">&sube;</span> Y</em>.
+
+</ol>
+
+Then the structure <em>(&#8497;, <span style="font-style:normal">&sube;</span>)</em> is an unordered tree
+whose root equals <em>U</em>.
+Conversely, if <em>(U, &le;)</em> is an unordered tree,
+and <em>&#8497;</em> is the set <em>{&darr;x | x <span style="font-style:normal">&isin;</span> U}</em>
+of all [[Ideal_(order_theory)#Basic_definitions | principal ideals]] of <em>(U, &le;)</em>
+then the set system <em>(U,&nbsp;&#8497;)</em> satisfies the above properties.
+
+[[File:NestedSetModel.svg|thumb|400px|Tree as a laminar system of sets (Copied from [[Nested_set_model#Example | Nested set model]])
+]]
+
+The set-system view of tree structures provides the default semantic model &ndash; in the majority of most popular cases, tree data structures represent [[containment hierarchy]].
+This also offers a justification for order direction with the root at the top: The root node is a <em>greater</em> container than any other node. Notable examples:
+<ul>
+<li>
+[[Directory structure]] of a file system. A directory contains its sub-directories.
+<li>
+[[DOM tree]]. The document parts corresponent to DOM nodes are in subpart relation according to the tree order.
+<li>
+[[Single inheritance]] in object-oriented programming. An instance of a class is also an instance of a superclass.
+<li>
+[[Taxonomy_(general)#Applications | Hierarchical taxonomy]] such as the [[Dewey Decimal Classification]] with sections of increasing specificity.
+<li>
+[[BSP tree | BSP trees]], [[Quadtree | quadtrees]], [[Octree | octrees]], [[R-tree | R-trees]] and other tree data structures used for 
+recursive [[Space_partitioning#Data_structures | space partitioning]].
+</ul>
+
+=== Ordered tree ===
+
+The structures introduced in the previous subsection form just the core "hierarchical"  part of tree data structures
+that appear in computing. In most cases, there is also an additional "horizontal" ordering between siblings. The correspondent [[Expansion (model theory) | expansion]] of the previously described tree structures <em>(X, &le;)</em> can be defined as follows.
+
+An <em>ordered tree</em> is a structure 
+<em>(X, 
+&le;<sub style="font-family: serif; font-style:normal">V</sub>,
+&le;<sub style="font-family: serif; font-style:normal">S</sub>)</em> 
+where 
+<em>X</em> is a non-empty set of nodes
+and
+<em>&le;<sub style="font-family: serif; font-style:normal">V</sub></em> 
+and
+<em>&le;<sub style="font-family: serif; font-style:normal">S</sub></em> 
+are relations on <em>X</em> 
+called <em><u>v</u>ertical</em> (or also <em>hierarchical</em><ref name="Kuboyama2007"/>) order
+and 
+<em><u>s</u>ibling</em> order, respectively.
+The structure is subject to the following conditions:
+
+<ol>
+<li>
+<em>(X, &le;<sub style="font-family: serif; font-style:normal">V</sub>)</em>
+is a partial order that is an unordered tree as defined in the previous subsection. 
+<li>
+<em>(X, &le;<sub style="font-family: serif; font-style:normal">S</sub>)</em> 
+is a partial order. 
+<li>
+The partial orders 
+<em>&le;<sub style="font-family: serif; font-style:normal">V</sub></em> and
+<em>&le;<sub style="font-family: serif; font-style:normal">S</sub></em>
+are orthogonal:
+<em>((&lt;<sub style="font-family: serif; font-style:normal">V</sub>) 
+<span style=" font-style:normal">&cup;</span>
+(&gt;<sub style="font-family: serif; font-style:normal">V</sub>))
+<span style=" font-style:normal">&cap;</span>
+((&lt;<sub style="font-family: serif; font-style:normal">S</sub>)
+<span style=" font-style:normal">&cup;</span>
+(&gt;<sub style="font-family: serif; font-style:normal">S</sub>))
+&nbsp;=&nbsp;
+<span style=" font-style:normal">&empty;</span></em>.
+That is, distinct nodes cannot be comparable both in
+<em>&le;<sub style="font-family: serif; font-style:normal">V</sub></em> and
+<em>&le;<sub style="font-family: serif; font-style:normal">S</sub></em>.
+<li>
+For every sibling set <em>S</em> of <em>(X, &le;<sub style="font-family: serif; font-style:normal">V</sub>)</em>,
+the restriction <em>(S, &le;<sub style="font-family: serif; font-style:normal">S</sub>)</em> 
+is a singly-branching tree.
+That is, <em>(S, &le;<sub style="font-family: serif; font-style:normal">S</sub>)</em> is a linear order,
+and if <em>S</em> is infinite, 
+then <em>(S, &le;<sub style="font-family: serif; font-style:normal">S</sub>)</em> 
+must be isomorphic to 
+<em>(<span style="font-family: serif; font-style:normal">&#8469;</span>, &le;)</em>, the usual ordering of natural numbers.
+</ol>
+
+Given this, there are three distinguished partial orders which are uniquely given by the following prescriptions:
+
+::{| cellpadding=3 style="border:0"
+| <em>(&lt;<sub style="font-family: serif; font-style:normal">H</sub>)</em> 
+| &nbsp;=&nbsp;
+| <em>(&le;<sub style="font-family: serif; font-style:normal">V</sub>)&nbsp;<span 
+style=" font-style:normal">&#9675;</span>&nbsp;(&lt;<sub style="font-family: serif; font-style:normal">S</sub>)&nbsp;<span style=" font-style:normal">&#9675;</span>&nbsp;(&ge;<sub style="font-family: serif; font-style:normal">V</sub>)</em>
+| &nbsp; (the <em><u>h</u>orizontal order</em>),
+|-
+| <em>(&lt;<sub style="font-family: serif; font-style:normal">L&#8315;</sub>)</em>
+| &nbsp;=&nbsp;
+| <em>(&gt;<sub style="font-family: serif; font-style:normal">V</sub>)&nbsp;<span style=" font-style:normal">&cup;</span>&nbsp;(&lt;<sub style="font-family: serif; font-style:normal">H</sub>)</em>
+| &nbsp; (the <em>"discordant" <u>l</u>inear order</em>),
+|-
+| <em>(&lt;<sub style="font-family: serif; font-style:normal">L&#8314;</sub>)</em>
+| &nbsp;=&nbsp;
+| <em>(&lt;<sub style="font-family: serif; font-style:normal">V</sub>)&nbsp;<span style=" font-style:normal">&cup;</span>&nbsp;(&lt;<sub style="font-family: serif; font-style:normal">H</sub>)</em>
+| &nbsp; (the <em>"concordant" <u>l</u>inear order</em>).
+|}
+
+This amounts to a "V-S-H-L<sup>&#177;</sup>" system of five partial orders
+<em>&le;<sub style="font-family: serif; font-style:normal">V</sub></em>,
+<em>&le;<sub style="font-family: serif; font-style:normal">S</sub></em>,
+<em>&le;<sub style="font-family: serif; font-style:normal">H</sub></em>,
+<em>&le;<sub style="font-family: serif; font-style:normal">L&#8314;</sub></em>,
+<em>&le;<sub style="font-family: serif; font-style:normal">L&#8315;</sub></em>
+on the same set <em>X</em> of nodes, in which, except for the pair 
+<em>{ &le;<sub style="font-family: serif; font-style:normal">S</sub>,
+&le;<sub style="font-family: serif; font-style:normal">H</sub> }</em>,
+any two relations uniquely determine the other three. 
+
+<i>Notes about notational conventions:</i> 
+<ul>
+<li>
+The [[Composition_of_relations | relation composition]] symbol &#9675; used in this subsection is to be interpreted left-to-right (as <math>\circ_l</math>).
+<li>
+Symbols <em>&lt;</em> and <em>&le;</em> express the <em>strict</em> and <em>non-strict</em> versions
+of a partial order.
+<li>
+Symbols <em>&gt;</em> and <em>&ge;</em> express the converse relations.
+<li>
+The <em><span style=" font-style:normal">&#8826;</span></em> symbol is used for the
+[[covering relation]] of <em>&le;</em> which is the <em>immediate</em> version of a partial order.
+
+</ul>
+This yields six versions 
+<em><span style=" font-style:normal">&#8826;</span></em>, 
+<em>&lt;</em>, <em>&le;</em>,
+<em><span style=" font-style:normal">&#8827;</span></em>, 
+<em>&gt;</em>, <em>&ge;</em> for a single partial order relation.
+Except for 
+<em><span style=" font-style:normal">&#8826;</span></em>
+and 
+<em><span style=" font-style:normal">&#8827;</span></em>, 
+each version uniquely determines the others. 
+Passing from <em><span style=" font-style:normal">&#8826;</span></em> to <em>&lt;</em>
+requires that <em>&lt;</em> be transitively reducible. 
+This is always satisfied for all of
+<em>&lt;<sub style="font-family: serif; font-style:normal">V</sub></em>,
+<em>&lt;<sub style="font-family: serif; font-style:normal">S</sub></em> and
+<em>&lt;<sub style="font-family: serif; font-style:normal">H</sub></em>
+but might not hold for
+<em>&lt;<sub style="font-family: serif; font-style:normal">L&#8314;</sub></em> or
+<em>&lt;<sub style="font-family: serif; font-style:normal">L&#8315;</sub></em>.
+
+<hr>
+
+The partial orders 
+<em>&le;<sub style="font-family: serif; font-style:normal">V</sub></em> and
+<em>&le;<sub style="font-family: serif; font-style:normal">H</sub></em>
+are complementary:
+<em>(&lt;<sub style="font-family: serif; font-style:normal">V</sub>) 
+<span style=" font-style:normal">&#8846;</span>
+(&gt;<sub style="font-family: serif; font-style:normal">V</sub>)
+<span style=" font-style:normal">&#8846;</span>
+(&lt;<sub style="font-family: serif; font-style:normal">H</sub>)
+<span style=" font-style:normal">&#8846;</span>
+(&gt;<sub style="font-family: serif; font-style:normal">H</sub>)
+&nbsp;=&nbsp;
+X &times; X 
+<span style=" font-style:normal">&#8726;</span>
+<span style="font-family: serif; font-style:normal">id</span><sub>X</sub></em>.
+As a consequence, the "concordant" linear order
+<em>&lt;<sub style="font-family: serif; font-style:normal">L&#8314;</sub></em> 
+is a [[linear extension]] of
+<em>&lt;<sub style="font-family: serif; font-style:normal">V</sub></em>.
+Similarly, <em>&lt;<sub style="font-family: serif; font-style:normal">L&#8315;</sub></em> 
+is a linear extension of
+<em>&gt;<sub style="font-family: serif; font-style:normal">V</sub></em>.
+
+The covering relations 
+<em><span style=" font-style:normal">&#8826;</span><sub style="font-family: serif; font-style:normal">L&#8315;</sub></em> and
+<em><span style=" font-style:normal">&#8826;</span><sub style="font-family: serif; font-style:normal">L&#8314;</sub></em> correspond to [[pre-order traversal]] and
+[[post-order traversal]], respectively.
+If <em>x 
+<span style=" font-style:normal">&#8826;</span><sub style="font-family: serif; font-style:normal">L&#8315;</sub> 
+y</em>
+then, according to whether <em>y</em> has a previous sibling or not,
+the <em>x</em> node is either the "rightmost" non-strict descendant of the previous sibling of <em>y</em> or, in the latter case, <em>x</em> is the first child of <em>y</em>.
+Pairs <em>(x,y)</em> of the latter case form the relation
+<em> 
+(<span style=" font-style:normal">&#8826;</span><sub style="font-family: serif; font-style:normal">L&#8315;</sub>)
+<span style=" font-style:normal">&#8726;</span>
+(&lt;<sub style="font-family: serif; font-style:normal">H</sub>)
+</em>
+which is a partial map that assigns each non-leaf node its <em>first child</em> node.
+Similarly, 
+<em>(<span style=" font-style:normal">&#8827;</span><sub style="font-family: serif; font-style:normal">L&#8314;</sub>) <span style=" font-style:normal">&#8726;</span> (&gt;<sub style="font-family: serif; font-style:normal">H</sub>)</em>
+assigns each non-leaf node with finitely many children its <em>last</em> child node.
+
+==== XPath Axes ====
+
+<div style="float:right; margin-left:2em">
+{|class="wikitable"
+!XPath Axis !! Relation !!
+|-
+|<code>ancestor</code>
+|<em>&lt;<sub style="font-family: serif; font-style:normal">V</sub></em>
+|
+|-
+|<code>ancestor-or-self</code>
+|<em>&le;<sub style="font-family: serif; font-style:normal">V</sub></em>
+|
+|-
+|<code>child</code>
+|<em><span style="font-style:normal">&#8827;</span><sub style="font-family: serif; font-style:normal">V</sub></em>
+|
+|-
+|<code>descendant</code>
+|<em>&gt;<sub style="font-family: serif; font-style:normal">V</sub></em>
+|
+|-
+|<code>descendant-or-self</code>
+|<em>&ge;<sub style="font-family: serif; font-style:normal">V</sub></em>
+|
+|-
+|<code>following</code>
+|<em>&lt;<sub style="font-family: serif; font-style:normal">H</sub></em>
+|
+|-
+|<code>following-sibling</code>
+|<em>&lt;<sub style="font-family: serif; font-style:normal">S</sub></em>
+|
+|-
+|<code>parent</code>
+|<em><span style="font-style:normal">&#8826;</span><sub style="font-family: serif; font-style:normal">V</sub></em>
+|
+|-
+|<code>preceding</code>
+|<em>&gt;<sub style="font-family: serif; font-style:normal">H</sub></em>
+|
+|-
+|<code>preceding-sibling</code>
+|<em>&gt;<sub style="font-family: serif; font-style:normal">S</sub></em>
+|
+|-
+|<code>self</code>
+|<em><span style="font-family: serif; font-style:normal">id</span><sub>X</sub></em>
+|
+|}
+</div>
+
+The table on the right shows a correspondence of introduced relations
+to [[XPath#Axis_specifiers| XPath axes]].
+For a context node<ref>
+{{cite web
+| title = XML Path Language (XPath) 3.1
+| url = http://www.w3.org/TR/xpath-31/
+| publisher = [[World Wide Web Consortium]]
+| date = 21 March 2017
+}}</ref>
+<em>x</em>, its <em>axis</em> named by the specifier in the left column is the set of nodes that equals the
+[[Image_(mathematics)#Generalization_to_binary_relations | image]] of <em>{x}</em> under
+the correspondent relation.
+As of [[XPath_2.0#Path_expressions| XPath 2.0]], the nodes are "returned" in <em>document order</em>,
+which is the "discordant" linear order
+<em>&le;<sub style="font-family: serif; font-style:normal">L&#8315;</sub></em>.
+A "concordance" would be achieved, if the vertical order <em>&le;<sub style="font-family: serif; font-style:normal">V</sub></em> was defined oppositely, with the bottom-up direction outwards the root like in set theory in accordance to natural [[Tree | trees]].{{efn|
+This would also establish a concordance of the two possible directions of inequality symbols with the categorization of XPath axes into <em>forward axes</em> and <em>reverse axes</em>.
+}}
+
+==== Traversal maps ====
+
+Below is the list of [[Partial function | partial maps]] that are typically used for ordered tree traversal.<ref>
+{{cite web 
+| url=https://www.w3.org/TR/DOM-Level-2-Traversal-Range/traversal.html#Traversal-TreeWalker
+| title=Document Object Model Traversal
+| year=2000
+| publisher=W3C
+}}</ref>
+Each map is a distinguished [[Functional relation | functional]] subrelation of 
+<em>&le;<sub style="font-family: serif; font-style:normal">L&#8315;</sub></em> or of its opposite.
+
+<ul>
+<li>
+<em><span style=" font-style:normal">&#8826;</span><sub style="font-family: serif; font-style:normal">V</sub></em>
+&hellip; the <em>parent-node</em> partial map,
+<li>
+<em><span style=" font-style:normal">&#8827;</span><sub style="font-family: serif; font-style:normal">S</sub></em>
+&hellip; the <em>previous-sibling</em> partial map,
+<li>
+<em><span style=" font-style:normal">&#8826;</span><sub style="font-family: serif; font-style:normal">S</sub></em>
+&hellip; the <em>next-sibling</em> partial map,
+<li>
+<em>(<span style="font-style:normal">&#8826;</span><sub style="font-family: serif; font-style:normal">L&#8315;</sub>) <span style=" font-style:normal">&#8726;</span> (&lt;<sub style="font-family: serif; font-style:normal">H</sub>)</em>
+&hellip; the <em>first-child</em> partial map,
+<li>
+<em>(<span style=" font-style:normal">&#8827;</span><sub style="font-family: serif; font-style:normal">L&#8314;</sub>) <span style=" font-style:normal">&#8726;</span> (&gt;<sub style="font-family: serif; font-style:normal">H</sub>)</em>
+&hellip; the <em>last-child</em> partial map,
+<li>
+<em><span style=" font-style:normal">&#8827;</span><sub style="font-family: serif; font-style:normal">L&#8315;</sub></em>
+&hellip; the <em>previous-node</em> partial map,
+<li>
+<em><span style=" font-style:normal">&#8826;</span><sub style="font-family: serif; font-style:normal">L&#8315;</sub></em>
+&hellip; the <em>next-node</em> partial map.
+</ul>
+
+==== Generating structure ====
+
+The traversal maps constitute a partial [[unary algebra]]<ref>{{cite web
+| url=http://www.math.chapman.edu/~jipsen/structures/doku.php/unary_algebras
+| title=Unary Algebras
+}}</ref>
+<em>(X, parent, previousSibling, &hellip;, nextNode)</em>
+that forms a basis for representing trees as [[Linked data structure| linked data structures]]. 
+At least conceptually,
+there are parent links, sibling adjacency links, and first / last child links. 
+This also applies to unordered trees in general, which can be observed on the [[dentry]] data structure in the Linux VFS.<ref>{{cite journal
+| url=http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.156.7781&rep=rep1&type=pdf#page=3
+| author=J.T. Mühlberg, G. Lüttgen
+| title=Verifying compiled file system code 
+| volume=Formal Methods: Foundations and Applications: 12th Brazilian Symposium on Formal Methods
+| publisher=Springer, Berlin, Heidelberg 
+| year=2009
+| format=PDF
+}}</ref>
+
+Similarly to the "V-S-H-L<sup>&#177;</sup>" system of partial orders, there are pairs of traversal maps that uniquely determine the whole ordered tree structure.  
+Naturally, one such generating structure is 
+<em>(X, 
+<span style=" font-style:normal">&#8826;</span><sub style="font-family: serif; font-style:normal">V</sub>,
+<span style=" font-style:normal">&#8826;</span><sub style="font-family: serif; font-style:normal">S</sub>)</em>
+which can be transcribed as <em>(X, parent, nextSibling)</em> 
+&ndash; the structure of parent and next-sibling links.
+Another important generating structure is
+<em>(X, firstChild, nextSibling)</em> known as [[left-child right-sibling binary tree]].
+This partial algebra establishes a one-to-one correspondence between [[Binary tree| binary trees]] and
+ordered trees.
+
+<div style="clear:both"></div>
+
+==== Definition using binary trees ====
+
+The correspondence to binary trees provides a concise definition of ordered trees as partial algebras. 
+
+An <em>ordered tree</em> is a structure <em>(X, lc, rs)</em> where
+<em>X</em> is a non-empty set of nodes, and
+<em>lc</em>, <em>rs</em> are partial maps on <em>X</em> called 
+<em><u>l</u>eft-<u>c</u>hild</em> and  <em><u>r</u>ight-<u>s</u>ibling</em>, respectively.
+The structure is subject to the following conditions:
+<ol>
+<li>
+The partial maps <em>lc</em> and <em>rs</em> are disjoint, i.e.
+<em>(lc)&nbsp;<span style=" font-style:normal">&cap;</span>&nbsp;(rs)
+&nbsp;=&nbsp;
+<span style=" font-style:normal">&empty;</span>
+</em>.
+<li>
+The inverse of <em>(lc)&nbsp;<span style=" font-style:normal">&cup;</span>&nbsp;(rs)</em> is a partial map <em>p</em>
+such that the partial algebra <em>(X, p)</em> is an unordered tree.
+</ol>
+
+The partial order structure <em>(X, &le;<sub style="font-family: serif; font-style:normal">V</sub>, &le;<sub style="font-family: serif; font-style:normal">S</sub>)</em>  
+is obtained as follows:
+
+::{| cellpadding=3 style="border:0"
+| <em>(<span style=" font-style:normal">&#8826;</span><sub style="font-family: serif; font-style:normal">S</sub>)  </em>
+| &nbsp;=&nbsp;
+| <em>(rs)</em>,
+|-
+| <em>(<span style=" font-style:normal">&#8827;</span><sub style="font-family: serif; font-style:normal">V</sub>)</em>
+| &nbsp;=&nbsp;
+| <em>(lc)&nbsp;<span style=" font-style:normal">&#9675;</span>&nbsp;(&le;<sub style="font-family: serif; font-style:normal">S</sub>)</em>.
+|}
+
+==Terminology used in trees==
+{{term|Root}} {{defn|The top node in a tree.}}
+{{term|Child}} {{defn|A node directly connected to another node when moving away from the root.}}
+{{term|Parent}} {{defn|The converse notion of a child.}}
+{{term|Siblings}} {{defn| A group of nodes with the same parent.}}
+{{term|Descendant}} {{defn|A node reachable by repeated proceeding from parent to child. Also known as subchild.}}
+{{term|Ancestor}} {{defn|A node reachable by repeated proceeding from child to parent.}}
+{{term|Leaf}} {{term|External node (not common)|multi=y}} {{defn|A node with no children.}}
+{{term|Branch node}} {{term|Internal node|multi=y}} {{defn|A node with at least one child.}}
+{{term|Degree}} {{defn|For a given node, its number of children. A leaf is necessarily degree zero.}}
+{{term|Edge}} {{defn|The connection between one node and another.}}
+{{term|Path}} {{defn|A sequence of nodes and edges connecting a node with a descendant.}}
+{{term|Level}} {{defn|The level of a node is defined as: 1{{nbsp}}+ the number of edges between the node and the root.}}
+{{term|Depth}} {{defn|The depth of a node is defined as: the number of edges between the node and the root.}}
+{{term|Height of node}} {{defn|The height of a node is the number of edges on the longest path between that node and a leaf.}}
+{{term|Height of tree}} {{defn|The height of a tree is the height of its root node.}}
+{{term|Forest}} {{defn|A forest is a set of n ≥ 0 disjoint trees.}}
+
+===Data type versus data structure===
+There is a distinction between a tree as an abstract data type and as a concrete data structure, analogous to the distinction between a [[List (abstract data type)|list]] and a [[linked list]].
+As a data type, a tree has a value and children, and the children are themselves trees; the value and children of the tree are interpreted as the value of the root node and the subtrees of the children of the root node. To allow finite trees, one must either allow the list of children to be empty (in which case trees can be required to be non-empty, an "empty tree" instead being represented by a forest of zero trees), or allow trees to be empty, in which case the list of children can be of fixed size ([[branching factor]], especially 2 or "binary"), if desired.
+
+As a data structure, a linked tree is a group of [[Node (computer science)|nodes]], where each node has a value and a list of [[Reference (computer science)|references]] to other nodes (its children).  There is also the requirement  that no two "downward" references point to the same node. Nodes in a tree could have next/previous references or references to their parent nodes.
+
+Due to the use of ''references'' to trees in the linked tree data structure, trees are often discussed implicitly assuming that they are being represented by references to the root node, as this is often how they are actually implemented. For example, rather than an empty tree, one may have a null reference: a tree is always non-empty, but a reference to a tree may be null.
+
+===Recursive===
+
+Recursively, as a data type a tree is defined as a value (of some data type, possibly empty), together with a list of trees (possibly an empty list), the subtrees of its children; symbolically:
+ t: v <nowiki>[t[1], ..., t[k]]</nowiki>
+(A tree ''t'' consists of a value ''v'' and a list of other trees.)
+
+More elegantly, via [[mutual recursion]], of which a tree is one of the most basic examples, a tree can be defined in terms of a forest (a list of trees), where a tree consists of a value and a forest (the subtrees of its children):
+ f: <nowiki>[t[1], ..., t[k]]</nowiki>
+ t: v f
+
+Note that this definition is in terms of values, and is appropriate in [[functional language]]s (it assumes [[Referential transparency (computer science)|referential transparency]]); different trees have no connections, as they are simply lists of values.
+
+As a data structure, a tree is defined as a node (the root), which itself consists of a value (of some data type, possibly empty), together with a list of references to other nodes (list possibly empty, references possibly null); symbolically:
+ n: v <nowiki>[&amp;n[1], ..., &amp;n[k]]</nowiki>
+(A node ''n'' consists of a value ''v'' and a list of references to other nodes.)
+
+This data structure defines a directed graph,{{efn|Properly, a rooted, ordered directed graph.}} and for it to be a tree one must add a condition on its global structure (its topology), namely that at most one reference can point to any given node (a node has at most a single parent), and no node in the tree point to the root. In fact, every node (other than the root) must have exactly one parent, and the root must have no parents.
+
+Indeed, given a list of nodes, and for each node a list of references to its children, one cannot tell if this structure is a tree or not without analyzing its global structure and  that it is in fact topologically a tree, as defined below.
+
+===Type theory===
+As an [[Abstract data type|ADT]], the abstract tree type ''T'' with values of some type ''E'' is defined, using the  abstract forest type ''F'' (list of trees), by the functions:
+:value: ''T'' → ''E''
+:children: ''T'' → ''F''
+:nil: () → ''F''
+:node: ''E'' × ''F'' → ''T''
+with the axioms:
+:value(node(''e'', ''f'')) = ''e''
+:children(node(''e'', ''f'')) = ''f''
+In terms of [[type theory]], a tree is an [[Recursive data type|inductive type]] defined by the constructors ''nil'' (empty forest) and ''node'' (tree with root node with given value and children).
+
+===Mathematical===
+Viewed as a whole, a tree data structure is an [[ordered tree]], generally with values attached to each node. Concretely, it is (if required to be non-empty):
+* A [[rooted tree]] with the "away from root" direction (a more narrow term is an "[[Arborescence (graph theory)|arborescence]]"), meaning:
+** A [[directed graph]],
+** whose underlying [[undirected graph]] is a [[tree (graph theory)|tree]] (any two vertices are connected by exactly one simple path),
+** with a distinguished root (one vertex is designated as the root),
+** which determines the direction on the edges (arrows point away from the root; given an edge, the node that the edge points from is called the ''parent'' and the node that the edge points to is called the ''child''),
+together with:
+* an ordering on the child nodes of a given node, and
+* a value (of some data type) at each node.
+Often trees have a fixed (more properly, bounded) [[branching factor]] ([[outdegree]]), particularly always having two child nodes (possibly empty, hence ''at most'' two ''non-empty'' child nodes), hence a "binary tree".
+
+Allowing empty trees makes some definitions simpler, some more complicated: a rooted tree must be non-empty, hence if empty trees are allowed the above definition instead becomes "an empty tree, or a rooted tree such that ...". On the other hand, empty trees simplify defining fixed branching factor: with empty trees allowed, a binary tree is a tree such that every node has exactly two children, each of which is a tree (possibly empty).The complete sets of operations on tree must include fork operation.
+
+==Terminology==
+A '''[[node (computer science)|node]]''' is a structure which may contain a value or condition, or represent a separate data structure (which could be a tree of its own). Each node in a tree has zero or more '''child nodes''', which are below it in the tree (by convention, trees are drawn growing downwards). A node that has a child is called the child's '''parent node''' (or ''ancestor node'', or [[Superior (hierarchy)|superior]]). A node has at most one parent.
+
+An '''internal node''' (also known as an '''inner node''', '''inode''' for short, or '''branch node''') is any node of a tree that has child nodes. Similarly, an '''external node''' (also known as an '''outer node''', '''leaf node''', or '''terminal node''') is any node that does not have child nodes.
+
+The topmost node in a tree is called the '''root node'''. Depending on definition, a tree may be required to have a root node (in which case all trees are non-empty), or may be allowed to be empty, in which case it does not necessarily have a root node. Being the topmost node, the root node will not have a parent. It is the node at which algorithms on the tree begin, since as a data structure, one can only pass from parents to children. Note that some algorithms (such as post-order depth-first search) begin at the root, but first visit leaf nodes (access the value of leaf nodes), only visit the root last (i.e., they first access the children of the root, but only access the ''value'' of the root last). All other nodes can be reached from it by following '''edges''' or '''links'''. (In the formal definition, each such path is also unique.) In diagrams, the root node is conventionally drawn at the top. In some trees, such as [[heap (data structure)|heaps]], the root node has special properties. Every node in a tree can be seen as the root node of the subtree rooted at that node.
+
+The '''height''' of a node is the length of the longest downward path to a leaf from that node. The height of the root is the height of the tree. The '''depth''' of a node is the length of the path to its root (i.e., its ''root path''). This is commonly needed in the manipulation of the various self-balancing trees, [[AVL Trees]] in particular. The root node has depth zero, leaf nodes have height zero, and a tree with only a single node (hence both a root and leaf) has depth and height zero. Conventionally, an empty tree (tree with no nodes, if such are allowed) has height −1.
+
+A '''subtree''' of a tree ''T'' is a tree consisting of a node in ''T'' and all of its descendants in ''T''.{{efn|This is different from the formal definition of subtree used in graph theory, which is a subgraph that forms a tree – it need not include all descendants. For example, the root node by itself is a subtree in the graph theory sense, but not in the data structure sense (unless there are no descendants).}}<ref>{{MathWorld|id=Subtree|title=Subtree}}</ref> Nodes thus correspond to subtrees (each node corresponds to the subtree of itself and all its descendants) – the subtree corresponding to the root node is the entire tree, and each node is the root node of the subtree it determines; the subtree corresponding to any other node is called a '''proper subtree''' (by analogy to a [[proper subset]]).
+
+==Drawing trees==
+Trees are often drawn in the plane. Ordered trees can be represented essentially uniquely in the plane, and are hence called ''plane trees,'' as follows: if one fixes a conventional order (say, counterclockwise), and arranges the child nodes in that order (first incoming parent edge, then first child edge, etc.), this yields an embedding of the tree in the plane, unique up to [[ambient isotopy]]. Conversely, such an embedding determines an ordering of the child nodes.
+
+If one places the root at the top (parents above children, as in a [[family tree]]) and places all nodes that are a given distance from the root (in terms of number of edges: the "level" of a tree) on a given horizontal line, one obtains a standard drawing of the tree. Given a binary tree, the first child is on the left (the "left node"), and the second child is on the right (the "right node").
+
+==Representations==
+There are many different ways to represent trees; common representations represent the nodes as [[Dynamic memory allocation|dynamically allocated]] records with pointers to their children, their parents, or both, or as items in an [[Array data structure|array]], with relationships between them determined by their positions in the array (e.g., [[binary heap]]).
+
+Indeed, a binary tree can be implemented as a list of lists (a list where the values are lists): the head of a list (the value of the first term) is the left child (subtree), while the tail (the list of second and subsequent terms) is the right child (subtree). This can be modified to allow values as well, as in Lisp [[S-expression]]s, where the head (value of first term) is the value of the node, the head of the tail (value of second term) is the left child, and the tail of the tail (list of third and subsequent terms) is the right child.
+
+In general a node in a tree will not have pointers to its parents, but this information can be included (expanding the data structure to also include a pointer to the parent) or stored separately. Alternatively, upward links can be included in the child node data, as in a [[threaded binary tree]].
+
+==Generalizations==
+
+===Digraphs===
+If edges (to child nodes) are thought of as references, then a tree is a special case of a digraph, and the tree data structure can be generalized to represent [[directed graph]]s by removing the constraints that a node may have at most one parent, and that no cycles are allowed. Edges are still abstractly considered as pairs of nodes, however, the terms ''parent'' and ''child'' are usually replaced by different terminology (for example, ''source'' and ''target''). Different [[graph (data structure)#Representations|implementation strategies]] exist: a digraph can be represented by the same local data structure as a tree (node with value and list of children), assuming that "list of children" is a list of references, or globally by such structures as [[adjacency list]]s.
+
+In [[graph theory]], a [[tree (graph theory)|tree]] is a connected acyclic [[Graph (data structure)|graph]]; unless stated otherwise, in graph theory trees and graphs are assumed undirected. There is no one-to-one correspondence between such trees and trees as data structure. We can take an arbitrary undirected tree, arbitrarily pick one of its [[vertex (graph theory)|vertices]] as the ''root'', make all its edges directed by making them point away from the root node – producing an [[Arborescence (graph theory)|arborescence]] – and assign an order to all the nodes. The result corresponds to a tree data structure. Picking a different root or different ordering produces a different one.
+
+Given a node in a tree, its children define an ordered forest (the union of subtrees given by all the children, or equivalently taking the subtree given by the node itself and erasing the root). Just as subtrees are natural for recursion (as in a depth-first search), forests are natural for [[corecursion]] (as in a breadth-first search).
+
+Via [[mutual recursion]], a forest can be defined as a list of trees (represented by root nodes), where a node (of a tree) consists of a value and a forest (its children):
+ f: <nowiki>[n[1], ..., n[k]]</nowiki>
+ n: v f
+
+==Traversal methods==
+{{Main article|Tree traversal}}
+Stepping through the items of a tree, by means of the connections between parents and children, is called '''walking the tree''', and the action is a '''walk''' of the tree. Often, an operation might be performed when a pointer arrives at a particular node. A walk in which each parent node is traversed before its children is called a '''pre-order''' walk; a walk in which the children are traversed before their respective parents are traversed is called a '''post-order''' walk; a walk in which a node's left subtree, then the node itself, and finally its right subtree are traversed is called an '''in-order''' traversal. (This last scenario, referring to exactly two subtrees, a left subtree and a right subtree, assumes specifically a [[binary tree]].)
+A '''level-order''' walk effectively performs a [[breadth-first search]] over the entirety of a tree; nodes are traversed level by level, where the root node is visited first, followed by its direct child nodes and their siblings, followed by its grandchild nodes and their siblings, etc., until all nodes in the tree have been traversed.
+
+==Common operations==
+* Enumerating all the items
+* Enumerating a section of a tree
+* Searching for an item
+* Adding a new item at a certain position on the tree
+* Deleting an item
+* [[Pruning (algorithm)|Pruning]]: Removing a whole section of a tree
+* [[Grafting (algorithm)|Grafting]]: Adding a whole section to a tree
+* Finding the root for any node
+* Finding the [[lowest common ancestor]] of two nodes
+
+==Common uses==
+* Representing [[hierarchical]] data such as [[Abstract syntax tree|syntax tree]]s
+* Storing data in a way that makes it efficiently [[search algorithm|searchable]] (see [[binary search tree]] and [[tree traversal]])
+* Representing [[sorting algorithm|sorted lists]] of data
+* As a workflow for [[Digital compositing|compositing]] digital images for [[visual effects]]{{citation needed|date=July 2018}}
+
+==See also==
+* [[Tree structure]]
+* [[Tree (graph theory)]]
+* [[Tree (set theory)]]
+* [[Cardinal Tree]] and [[Ordinal Tree]]
+* [[Hierarchy (mathematics)]]
+* [[Dialog tree]]
+* [[Single inheritance]]
+* [[Generative grammar]]
+* [[Hierarchical clustering]]
+* [[Binary space partition tree]]
+* [[Recursion]]
+
+===Other trees===
+* [[Trie]]
+* [[Day–Stout–Warren algorithm]]
+* [[Enfilade (Xanadu)|Enfilade]]
+* [[Left child-right sibling binary tree]]
+* [[Hierarchical temporal memory]]
+
+==Notes==
+{{notelist}}
+
+==References==
+{{Reflist}}
+{{refbegin}}
+{{refend}}
+
+==Further reading==
+
+* [[Donald Knuth]]. ''[[The Art of Computer Programming]]: Fundamental Algorithms'', Third Edition. Addison-Wesley, 1997. {{ISBN|0-201-89683-4}} . Section 2.3: Trees, pp.&nbsp;308–423.
+* [[Thomas H. Cormen]], [[Charles E. Leiserson]], [[Ronald L. Rivest]], and [[Clifford Stein]]. ''[[Introduction to Algorithms]]'', Second Edition. MIT Press and McGraw-Hill, 2001. {{ISBN|0-262-03293-7}} . Section 10.4: Representing rooted trees, pp.&nbsp;214–217. Chapters 12–14 (Binary Search Trees, Red-Black Trees, Augmenting Data Structures), pp.&nbsp;253–320.
+
+==External links==
+{{Commons category|Tree structures}}
+* [http://www.community-of-knowledge.de/beitrag/data-trees-as-a-means-of-presenting-complex-data-analysis/ Data Trees as a Means of Presenting Complex Data Analysis] by Sally Knipe in August 8, 2013
+* [https://xlinux.nist.gov/dads/HTML/tree.html Description] from the [[Dictionary of Algorithms and Data Structures]]
+* [https://cran.r-project.org/web/packages/data.tree/ CRAN - Package data.tree] implementation of a tree data structure in the R programming language
+* [http://wormweb.org/celllineage WormWeb.org: Interactive Visualization of the ''C. elegans'' Cell Tree] – Visualize the entire cell lineage tree of the nematode ''C. elegans'' (javascript)
+* [http://www.allisons.org/ll/AlgDS/Tree/ ''Binary Trees'' by L. Allison]
+
+{{CS-Trees}}
+{{Data structures}}
+
+{{DEFAULTSORT:Tree (Data Structure)}}
+[[Category:Data types]]
+[[Category:Trees (data structures)| ]]
+[[Category:Knowledge representation]]
+[[Category:Abstract_data_types]]
+
+[[de:Baum (Graphentheorie)]]
